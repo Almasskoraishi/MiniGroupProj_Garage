@@ -7,8 +7,50 @@ package model;
 
 /** @author Elijah Edlund */
 // Class for vehicles 
-// Probably want to have classes for vehicle type like car/truck/bike or can have Vehicle class be the blanket class for any vehicle type
-// I'm thinking when we add a vehicle on the GUI we have a drop down menu for the vehicle type?
+// Simplified class to not need multiple objects for different vehicles and to just use vehicle instead
 public class Vehicle {
+	private Owner owner; // ID of owner creating the vehicle
+	private String makeModelYear; // ex: Ford Focus 2004
+	private String plateNum; // License plate ex: R35457
+
+	public Vehicle() {
+		super();
+	}
+
+	public Vehicle(Owner ownerID, String makeModelYear, String plateNum) {
+		super();
+		this.owner = ownerID;
+		this.makeModelYear = makeModelYear;
+		this.plateNum = plateNum;
+	}
+
+	public Owner getOwnerID() {
+		return owner;
+	}
+
+	public void setOwnerID(Owner ownerID) {
+		this.owner = ownerID;
+	}
+
+	public String getMakeModelYear() {
+		return makeModelYear;
+	}
+
+	public void setMakeModelYear(String makeModelYear) {
+		this.makeModelYear = makeModelYear;
+	}
+
+	public String getPlateNum() {
+		return plateNum;
+	}
+
+	public void setPlateNum(String plateNum) {
+		this.plateNum = plateNum;
+	}
+
+	@Override
+	public String toString() {
+		return "Vehicle [ownerID=" + owner.toString() + ", makeModelYear=" + makeModelYear + ", plateNum=" + plateNum + "]";
+	}
 
 }

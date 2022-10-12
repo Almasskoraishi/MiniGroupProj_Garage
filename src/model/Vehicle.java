@@ -5,31 +5,45 @@
  */
 package model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.Table;
+
 /** @author Elijah Edlund */
 // Class for vehicles 
 // Simplified class to not need multiple objects for different vehicles and to just use vehicle instead
+@Entity
+@Table(name = "vehicles")
 public class Vehicle {
-	private Owner owner; // ID of owner creating the vehicle
+	@Id
+	@GeneratedValue
+	@Column(name = "OWNERNAME")
+	private String ownerName; // Owner creating the vehicle
+	@Column(name = "MAKEMODELYEAR")
 	private String makeModelYear; // ex: Ford Focus 2004
+	@Column(name = "PLATENUM")
 	private String plateNum; // License plate ex: R35457
 
 	public Vehicle() {
 		super();
 	}
 
-	public Vehicle(Owner ownerID, String makeModelYear, String plateNum) {
+	public Vehicle(String ownerName, String makeModelYear, String plateNum) {
 		super();
-		this.owner = ownerID;
+		this.ownerName = ownerName;
 		this.makeModelYear = makeModelYear;
 		this.plateNum = plateNum;
 	}
 
-	public Owner getOwnerID() {
-		return owner;
+	public String getOwnerName() {
+		return ownerName;
 	}
 
-	public void setOwnerID(Owner ownerID) {
-		this.owner = ownerID;
+	public void setOwnerNamme(String ownerName) {
+		this.ownerName = ownerName;
 	}
 
 	public String getMakeModelYear() {
@@ -50,7 +64,7 @@ public class Vehicle {
 
 	@Override
 	public String toString() {
-		return "Vehicle [ownerID=" + owner.toString() + ", makeModelYear=" + makeModelYear + ", plateNum=" + plateNum + "]";
+		return "Vehicle [ownerName=" + ownerName + ", makeModelYear=" + makeModelYear + ", plateNum=" + plateNum + "]";
 	}
 
 }

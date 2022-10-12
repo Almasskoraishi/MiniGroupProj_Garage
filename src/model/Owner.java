@@ -5,10 +5,20 @@
  */
 package model;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
 /** @author Elijah Edlund */
 // Class for the owner of the vehicles
+@Entity
+@Table(name="owner")
 public class Owner {
-	// TODO
+	@Id
+	@GeneratedValue
 	private int ID;
 	private String name;
 

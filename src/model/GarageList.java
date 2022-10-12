@@ -7,11 +7,24 @@ package model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
 /** @author Elijah Edlund */
+@Entity
 public class GarageList {
+	@Id
+	@GeneratedValue
 	private int ID;
 	private String garageName;
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	private Owner garageOwner;
+	@OneToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
 	private List<Vehicle> vehicles;
 
 	public GarageList() {

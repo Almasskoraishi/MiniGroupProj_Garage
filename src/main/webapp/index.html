@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<!-- author Elijah Edlund -->
+<title>Add a Vehicle</title>
+</head>
+<body>
+	<form action="addVehicleServlet" method="post">
+		<!--  Get plate num -->
+		Plate number: <input type="text" name="plateNum" placeholder="123-ABC">
+		<br />
+		<!--  Get owner name -->
+		Owner name: <input type="text" name="ownerName" placeholder="John Doe">
+		<br />
+		<!--  Get make, model, year -->
+		Make, Model, and Year: <input type="text" name="makeModelYear"
+			placeholder="Ford Focus 2004"> <br />
+		<!-- Submit -->
+		<input type="submit" value="Add Vehicle">
+	</form>
+	<br />
+	<!-- View all vehicles -->
+	<a href="viewAllVehiclesServlet">View all vehicles.</a>
+
+</body>
+</html>

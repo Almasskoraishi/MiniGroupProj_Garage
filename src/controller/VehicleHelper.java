@@ -39,7 +39,7 @@ public class VehicleHelper {
 		EntityManager em = emfac.createEntityManager();
 		em.getTransaction().begin();
 		TypedQuery<Vehicle> typedQ = em.createQuery(
-				"SELECT v FROM Vehicle v WHERE v.ownername = :selectedOwnerName and v.makemodelyear = :selectedMakeModelYear and v.platenum = :selectedPlateNum",
+				"SELECT v FROM Vehicle v WHERE v.ownerName = :selectedOwnerName and v.makeModelYear = :selectedMakeModelYear and v.plateNum = :selectedPlateNum",
 				Vehicle.class);
 		typedQ.setParameter("selectedOwnerName", toDelete.getOwnerName());
 		typedQ.setParameter("selectedMakeModelYear", toDelete.getMakeModelYear());

@@ -15,7 +15,7 @@ import javax.persistence.Table;
 /** @author Elijah Edlund */
 // Class for the owner of the vehicles
 @Entity
-@Table(name="owner")
+@Table(name = "owner")
 public class Owner {
 	@Id
 	@GeneratedValue
@@ -24,6 +24,11 @@ public class Owner {
 
 	public Owner() {
 		super();
+	}
+
+	public Owner(String name) {
+		super();
+		this.name = name;
 	}
 
 	public Owner(int ID, String name) {
@@ -47,7 +52,7 @@ public class Owner {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Owner [ID=" + ID + ", name=" + name + "]";

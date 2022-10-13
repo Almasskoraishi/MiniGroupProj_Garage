@@ -20,12 +20,12 @@ import javax.persistence.Table;
 public class Vehicle {
 	@Id
 	@GeneratedValue
+	@Column(name = "PLATENUM")
+	private String plateNum; // License plate ex: R35457
 	@Column(name = "OWNERNAME")
 	private String ownerName; // Owner creating the vehicle
 	@Column(name = "MAKEMODELYEAR")
 	private String makeModelYear; // ex: Ford Focus 2004
-	@Column(name = "PLATENUM")
-	private String plateNum; // License plate ex: R35457
 
 	public Vehicle() {
 		super();

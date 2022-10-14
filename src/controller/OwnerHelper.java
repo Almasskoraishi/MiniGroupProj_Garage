@@ -39,7 +39,7 @@ public class OwnerHelper {
 	public Owner findOwner(String nameToLookup) {
 		EntityManager em = emfac.createEntityManager();
 		em.getTransaction().begin();
-		TypedQuery<Owner> typedQ = em.createQuery("SELECT o FROM Owner o WHERE o.ownerName = :selectedName",
+		TypedQuery<Owner> typedQ = em.createQuery("SELECT o FROM Owner o WHERE o.name = :selectedName",
 				Owner.class);
 		typedQ.setParameter("selectedName", nameToLookup);
 		typedQ.setMaxResults(1);

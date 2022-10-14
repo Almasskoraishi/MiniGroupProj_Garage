@@ -12,8 +12,7 @@
 		<table>
 			<c:forEach items="${requestScope.allLists}" var="currentList">
 				<tr>
-					<td><input type="radio" name="ID"
-						value="${currentList.ID}">
+					<td><input type="radio" name="ID" value="${currentList.ID}">
 					<td><h2>${currentList.garageName}</h2></td>
 				</tr>
 				<tr>

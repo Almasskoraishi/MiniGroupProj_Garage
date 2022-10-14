@@ -53,7 +53,7 @@ public class CreateNewGarageServlet extends HttpServlet {
 		g.setVehicles(selectedItemsInList);
 		GarageListHelper glh = new GarageListHelper();
 		glh.insertNewGarageList(g);
-
+		System.out.println(g.toString());
 		System.out.println("Success");
 
 		getServletContext().getRequestDispatcher("/viewAllGaragesServlet").forward(request, response);

@@ -39,7 +39,7 @@ public class GarageListHelper {
 		EntityManager em = emfac.createEntityManager();
 		em.getTransaction().begin();
 		// sql
-		TypedQuery<GarageList> typedQ = em.createQuery("SELECT g FROM GarageList g WHERE g.id = :selectedId",
+		TypedQuery<GarageList> typedQ = em.createQuery("SELECT g FROM GarageList g WHERE g.ID = :selectedId",
 				GarageList.class);
 		// use id
 		typedQ.setParameter("selectedId", toDel.getID());
